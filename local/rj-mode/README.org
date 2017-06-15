@@ -9,7 +9,7 @@
 * Description
 
 (Note: this is alpha. The rj-mode package only exists in this repo,
-in the =local/= dir, for now).)
+in the =local/= dir, for now).
 
 =rj-mode= is a minor mode to automatically vertically-recenter the cursor
 following many jumping motions, including:
@@ -67,6 +67,8 @@ If you edit =rj-extra-commands=, toggle =rj-mode= off and on again for it to
 take effect.
 
 * Key bindings
+
+(Spacemacs only).
 
 | Key Binding | Description              |
 |-------------+--------------------------|
