@@ -1,0 +1,57 @@
+#+TITLE: rj-mode readme
+
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#configuration][Configuration]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+
+=rj-mode= is a minor mode to automatically vertically-recenter the cursor
+following many jumping motions, including:
+
+- All Evil motion commands that add to the jumplist
+
+  To do this, rj hooks into =post-command-hook= looking for any command
+  with the command property =:jump=, which evil uses to mark commands that
+  should store a jump point before executing.
+
+- Evil jumplist navigation (e.g. ~C-o~ / ~C-z~)
+
+  rj hooks into =evil-jumps-post-jump-hook= to catch these.
+ 
+- A configurable list of extra commands, including by default jumps to marks,
+  next error, and changelist navigation
+
+  rj installs after-advice to every command in =rj-extra-commands= when the
+  mode is activated (and cleans up when it's turned off).
+
+I'm favouring hooks over advice where possible.
+
+* Install
+
+It's not in ELPA or anything right now. I just learned elisp like 5 minutes ago
+and I don't know how the package manager thing works yet.
+
+Clone the repo if you like, or use the [[https://github.com/vaz/rj-mode-layer][Spacemacs layer]] if you want.
+
+* Configuration
+
+=rj-blacklist= is a list of command name patterns to be excluded, that is, rj
+won't recenter after these commands. This is useful for when  ="^evil-snipe-[tTfF]$"= is on
+the blacklist (most of the time, when I use it, it's not much of a real jump).
+
+=rj-extra-commands= is a list of command names to add rj's behaviour to. rj
+will add after-advice to each of these commands when it's activated, and
+remove it when it's deactivated.
+
+If you edit =rj-extra-commands=, toggle =rj-mode= off and on again for it to
+take effect.
+
+* Key bindings
+
+| Key Binding | Description              |
+|-------------+--------------------------|
+| ~SPC t R~   | Toggle =rj-mode= locally |
+| ~SPC t C-R~ | Toggle =global-rj-mode=  |
