@@ -25,4 +25,4 @@
 
 (defconst rj-mode-version "0.1")
 
-(provide 'evil)
+(provide 'rj-mode)

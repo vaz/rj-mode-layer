@@ -16,4 +16,4 @@
   "List of extra commands to add after-advice to force recentering.
 This list takes precedence over the blacklist.")
 
-(provide 'evil-vars)
+(provide 'rj-mode-vars)
