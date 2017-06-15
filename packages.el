@@ -43,6 +43,8 @@
         :evil-leader "tR")
 
       (spacemacs/set-leader-keys
-        "t C-R" 'global-rj-mode))))
+        "t C-R" 'global-rj-mode)
+
+      (spacemacs|diminish rj-mode " ⊖" " -"))))
 
 ;;; packages.el ends here
