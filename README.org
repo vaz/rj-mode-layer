@@ -32,6 +32,8 @@ following many jumping motions, including:
 
 I'm favouring hooks over advice where possible.
 
+Inspired by [[https://www.reddit.com/r/spacemacs/comments/6dqkke/make_evilgotoline_center_the_screen/][this reddit post on /r/spacemacs]].
+
 * Install
 
 It's not in ELPA or anything right now. I just learned elisp like 5 minutes ago
